@@ -1,0 +1,11 @@
+D:\HCMUTEIT\Document\Cloud\DoAnCuoiKy\QlyNhanVien\CRUD_Student\bin\Debug\CRUD_Student.exe.config
+D:\HCMUTEIT\Document\Cloud\DoAnCuoiKy\QlyNhanVien\CRUD_Student\bin\Debug\CRUD_Student.exe
+D:\HCMUTEIT\Document\Cloud\DoAnCuoiKy\QlyNhanVien\CRUD_Student\bin\Debug\CRUD_Student.pdb
+D:\HCMUTEIT\Document\Cloud\DoAnCuoiKy\QlyNhanVien\CRUD_Student\obj\Debug\QlyNhanVien.csprojAssemblyReference.cache
+D:\HCMUTEIT\Document\Cloud\DoAnCuoiKy\QlyNhanVien\CRUD_Student\obj\Debug\CRUD_Student.Form1.resources
+D:\HCMUTEIT\Document\Cloud\DoAnCuoiKy\QlyNhanVien\CRUD_Student\obj\Debug\CRUD_Student.GUI.NhanVienManagement.resources
+D:\HCMUTEIT\Document\Cloud\DoAnCuoiKy\QlyNhanVien\CRUD_Student\obj\Debug\CRUD_Student.Properties.Resources.resources
+D:\HCMUTEIT\Document\Cloud\DoAnCuoiKy\QlyNhanVien\CRUD_Student\obj\Debug\QlyNhanVien.csproj.GenerateResource.cache
+D:\HCMUTEIT\Document\Cloud\DoAnCuoiKy\QlyNhanVien\CRUD_Student\obj\Debug\QlyNhanVien.csproj.CoreCompileInputs.cache
+D:\HCMUTEIT\Document\Cloud\DoAnCuoiKy\QlyNhanVien\CRUD_Student\obj\Debug\CRUD_Student.exe
+D:\HCMUTEIT\Document\Cloud\DoAnCuoiKy\QlyNhanVien\CRUD_Student\obj\Debug\CRUD_Student.pdb
