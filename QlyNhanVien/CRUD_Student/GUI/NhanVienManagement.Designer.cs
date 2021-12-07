@@ -34,19 +34,19 @@ namespace CRUD_Student.GUI
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_SearchNV = new System.Windows.Forms.Button();
             this.btn_DSNV = new System.Windows.Forms.Button();
-            this.tbx_searchNV = new System.Windows.Forms.TextBox();
+            this.tbx_Search = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btn_ThemNV = new System.Windows.Forms.Button();
             this.btn_SuaNV = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgv_dsnv = new System.Windows.Forms.DataGridView();
+            this.dgv_NhanVien = new System.Windows.Forms.DataGridView();
             this.btn_XoaNV = new System.Windows.Forms.Button();
             this.grb_info = new System.Windows.Forms.GroupBox();
-            this.cmb_quyen = new System.Windows.Forms.ComboBox();
-            this.tbx_hoten = new System.Windows.Forms.TextBox();
-            this.tbx_mk2 = new System.Windows.Forms.TextBox();
-            this.tbx_mk = new System.Windows.Forms.TextBox();
-            this.tbx_tendn = new System.Windows.Forms.TextBox();
+            this.cmB_Type = new System.Windows.Forms.ComboBox();
+            this.tbx_DisplName = new System.Windows.Forms.TextBox();
+            this.tbx_Repass = new System.Windows.Forms.TextBox();
+            this.tbx_Pass = new System.Windows.Forms.TextBox();
+            this.tbx_User = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,9 +54,9 @@ namespace CRUD_Student.GUI
             this.label_UName = new System.Windows.Forms.Label();
             this.tab_PC = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.cmb_banpc = new System.Windows.Forms.ComboBox();
+            this.cmbBanPC = new System.Windows.Forms.ComboBox();
             this.cmb_capc = new System.Windows.Forms.ComboBox();
-            this.cmb_nvpc = new System.Windows.Forms.ComboBox();
+            this.cmbNhanVienpc = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -64,19 +64,25 @@ namespace CRUD_Student.GUI
             this.btn_xoaPC = new System.Windows.Forms.Button();
             this.btn_themPC = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dgv_dspc = new System.Windows.Forms.DataGridView();
+            this.dgvDSPhanCong = new System.Windows.Forms.DataGridView();
             this.btn_signout = new System.Windows.Forms.Button();
+            this.lbl_tenDangnhap = new System.Windows.Forms.Label();
+            this.TenDN = new System.Windows.Forms.Label();
+            this.lbl_HoTen = new System.Windows.Forms.Label();
+            this.hoTen = new System.Windows.Forms.Label();
+            this.quyen = new System.Windows.Forms.Label();
+            this.lbl_quyen = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tab_NV.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_dsnv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).BeginInit();
             this.grb_info.SuspendLayout();
             this.tab_PC.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_dspc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSPhanCong)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -88,6 +94,7 @@ namespace CRUD_Student.GUI
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(1157, 604);
             this.tabControl.TabIndex = 0;
+            this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
             // 
             // tab_NV
             // 
@@ -109,7 +116,7 @@ namespace CRUD_Student.GUI
             // 
             this.groupBox2.Controls.Add(this.btn_SearchNV);
             this.groupBox2.Controls.Add(this.btn_DSNV);
-            this.groupBox2.Controls.Add(this.tbx_searchNV);
+            this.groupBox2.Controls.Add(this.tbx_Search);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(788, 23);
@@ -128,6 +135,7 @@ namespace CRUD_Student.GUI
             this.btn_SearchNV.TabIndex = 3;
             this.btn_SearchNV.Text = "Search";
             this.btn_SearchNV.UseVisualStyleBackColor = false;
+            this.btn_SearchNV.Click += new System.EventHandler(this.btn_SearchNV_Click);
             // 
             // btn_DSNV
             // 
@@ -138,13 +146,15 @@ namespace CRUD_Student.GUI
             this.btn_DSNV.TabIndex = 2;
             this.btn_DSNV.Text = "DS Nhân Viên";
             this.btn_DSNV.UseVisualStyleBackColor = false;
+            this.btn_DSNV.Click += new System.EventHandler(this.btn_DSNV_Click);
             // 
-            // tbx_searchNV
+            // tbx_Search
             // 
-            this.tbx_searchNV.Location = new System.Drawing.Point(127, 43);
-            this.tbx_searchNV.Name = "tbx_searchNV";
-            this.tbx_searchNV.Size = new System.Drawing.Size(172, 27);
-            this.tbx_searchNV.TabIndex = 1;
+            this.tbx_Search.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbx_Search.Location = new System.Drawing.Point(127, 43);
+            this.tbx_Search.Name = "tbx_Search";
+            this.tbx_Search.Size = new System.Drawing.Size(172, 27);
+            this.tbx_Search.TabIndex = 1;
             // 
             // label5
             // 
@@ -166,6 +176,7 @@ namespace CRUD_Student.GUI
             this.btn_ThemNV.TabIndex = 2;
             this.btn_ThemNV.Text = "Thêm";
             this.btn_ThemNV.UseVisualStyleBackColor = false;
+            this.btn_ThemNV.Click += new System.EventHandler(this.btn_ThemNV_Click);
             // 
             // btn_SuaNV
             // 
@@ -177,10 +188,11 @@ namespace CRUD_Student.GUI
             this.btn_SuaNV.TabIndex = 2;
             this.btn_SuaNV.Text = "Sửa TT";
             this.btn_SuaNV.UseVisualStyleBackColor = false;
+            this.btn_SuaNV.Click += new System.EventHandler(this.btn_SuaNV_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dgv_dsnv);
+            this.groupBox1.Controls.Add(this.dgv_NhanVien);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(21, 242);
             this.groupBox1.Name = "groupBox1";
@@ -189,15 +201,16 @@ namespace CRUD_Student.GUI
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh Sách Nhân Viên:";
             // 
-            // dgv_dsnv
+            // dgv_NhanVien
             // 
-            this.dgv_dsnv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_dsnv.Location = new System.Drawing.Point(6, 26);
-            this.dgv_dsnv.Name = "dgv_dsnv";
-            this.dgv_dsnv.RowHeadersWidth = 51;
-            this.dgv_dsnv.RowTemplate.Height = 24;
-            this.dgv_dsnv.Size = new System.Drawing.Size(981, 285);
-            this.dgv_dsnv.TabIndex = 0;
+            this.dgv_NhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_NhanVien.Location = new System.Drawing.Point(6, 26);
+            this.dgv_NhanVien.Name = "dgv_NhanVien";
+            this.dgv_NhanVien.RowHeadersWidth = 51;
+            this.dgv_NhanVien.RowTemplate.Height = 24;
+            this.dgv_NhanVien.Size = new System.Drawing.Size(981, 285);
+            this.dgv_NhanVien.TabIndex = 0;
+            this.dgv_NhanVien.Click += new System.EventHandler(this.dgv_NhanVien_Click);
             // 
             // btn_XoaNV
             // 
@@ -209,14 +222,15 @@ namespace CRUD_Student.GUI
             this.btn_XoaNV.TabIndex = 2;
             this.btn_XoaNV.Text = "Xóa";
             this.btn_XoaNV.UseVisualStyleBackColor = false;
+            this.btn_XoaNV.Click += new System.EventHandler(this.btn_XoaNV_Click);
             // 
             // grb_info
             // 
-            this.grb_info.Controls.Add(this.cmb_quyen);
-            this.grb_info.Controls.Add(this.tbx_hoten);
-            this.grb_info.Controls.Add(this.tbx_mk2);
-            this.grb_info.Controls.Add(this.tbx_mk);
-            this.grb_info.Controls.Add(this.tbx_tendn);
+            this.grb_info.Controls.Add(this.cmB_Type);
+            this.grb_info.Controls.Add(this.tbx_DisplName);
+            this.grb_info.Controls.Add(this.tbx_Repass);
+            this.grb_info.Controls.Add(this.tbx_Pass);
+            this.grb_info.Controls.Add(this.tbx_User);
             this.grb_info.Controls.Add(this.label4);
             this.grb_info.Controls.Add(this.label3);
             this.grb_info.Controls.Add(this.label2);
@@ -230,47 +244,55 @@ namespace CRUD_Student.GUI
             this.grb_info.TabStop = false;
             this.grb_info.Text = "Thông Tin Nhân Viên:";
             // 
-            // cmb_quyen
+            // cmB_Type
             // 
-            this.cmb_quyen.FormattingEnabled = true;
-            this.cmb_quyen.Location = new System.Drawing.Point(520, 92);
-            this.cmb_quyen.Name = "cmb_quyen";
-            this.cmb_quyen.Size = new System.Drawing.Size(132, 31);
-            this.cmb_quyen.TabIndex = 2;
+            this.cmB_Type.Font = new System.Drawing.Font("Arial Unicode MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmB_Type.FormattingEnabled = true;
+            this.cmB_Type.Items.AddRange(new object[] {
+            "Thu Ngan",
+            "Tiep Tan"});
+            this.cmB_Type.Location = new System.Drawing.Point(520, 92);
+            this.cmB_Type.Name = "cmB_Type";
+            this.cmB_Type.Size = new System.Drawing.Size(132, 31);
+            this.cmB_Type.TabIndex = 2;
             // 
-            // tbx_hoten
+            // tbx_DisplName
             // 
-            this.tbx_hoten.Location = new System.Drawing.Point(520, 43);
-            this.tbx_hoten.Multiline = true;
-            this.tbx_hoten.Name = "tbx_hoten";
-            this.tbx_hoten.Size = new System.Drawing.Size(197, 27);
-            this.tbx_hoten.TabIndex = 1;
+            this.tbx_DisplName.Font = new System.Drawing.Font("Arial Unicode MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbx_DisplName.Location = new System.Drawing.Point(520, 43);
+            this.tbx_DisplName.Multiline = true;
+            this.tbx_DisplName.Name = "tbx_DisplName";
+            this.tbx_DisplName.Size = new System.Drawing.Size(197, 27);
+            this.tbx_DisplName.TabIndex = 1;
             // 
-            // tbx_mk2
+            // tbx_Repass
             // 
-            this.tbx_mk2.Location = new System.Drawing.Point(199, 138);
-            this.tbx_mk2.Multiline = true;
-            this.tbx_mk2.Name = "tbx_mk2";
-            this.tbx_mk2.PasswordChar = '*';
-            this.tbx_mk2.Size = new System.Drawing.Size(197, 27);
-            this.tbx_mk2.TabIndex = 1;
+            this.tbx_Repass.Font = new System.Drawing.Font("Arial Unicode MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbx_Repass.Location = new System.Drawing.Point(199, 138);
+            this.tbx_Repass.Multiline = true;
+            this.tbx_Repass.Name = "tbx_Repass";
+            this.tbx_Repass.PasswordChar = '*';
+            this.tbx_Repass.Size = new System.Drawing.Size(197, 27);
+            this.tbx_Repass.TabIndex = 1;
             // 
-            // tbx_mk
+            // tbx_Pass
             // 
-            this.tbx_mk.Location = new System.Drawing.Point(199, 91);
-            this.tbx_mk.Multiline = true;
-            this.tbx_mk.Name = "tbx_mk";
-            this.tbx_mk.PasswordChar = '*';
-            this.tbx_mk.Size = new System.Drawing.Size(197, 27);
-            this.tbx_mk.TabIndex = 1;
+            this.tbx_Pass.Font = new System.Drawing.Font("Arial Unicode MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbx_Pass.Location = new System.Drawing.Point(199, 91);
+            this.tbx_Pass.Multiline = true;
+            this.tbx_Pass.Name = "tbx_Pass";
+            this.tbx_Pass.PasswordChar = '*';
+            this.tbx_Pass.Size = new System.Drawing.Size(197, 27);
+            this.tbx_Pass.TabIndex = 1;
             // 
-            // tbx_tendn
+            // tbx_User
             // 
-            this.tbx_tendn.Location = new System.Drawing.Point(199, 43);
-            this.tbx_tendn.Multiline = true;
-            this.tbx_tendn.Name = "tbx_tendn";
-            this.tbx_tendn.Size = new System.Drawing.Size(197, 27);
-            this.tbx_tendn.TabIndex = 1;
+            this.tbx_User.Font = new System.Drawing.Font("Arial Unicode MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbx_User.Location = new System.Drawing.Point(199, 43);
+            this.tbx_User.Multiline = true;
+            this.tbx_User.Name = "tbx_User";
+            this.tbx_User.Size = new System.Drawing.Size(197, 27);
+            this.tbx_User.TabIndex = 1;
             // 
             // label4
             // 
@@ -337,9 +359,9 @@ namespace CRUD_Student.GUI
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.cmb_banpc);
+            this.groupBox5.Controls.Add(this.cmbBanPC);
             this.groupBox5.Controls.Add(this.cmb_capc);
-            this.groupBox5.Controls.Add(this.cmb_nvpc);
+            this.groupBox5.Controls.Add(this.cmbNhanVienpc);
             this.groupBox5.Controls.Add(this.label8);
             this.groupBox5.Controls.Add(this.label7);
             this.groupBox5.Controls.Add(this.label6);
@@ -351,29 +373,37 @@ namespace CRUD_Student.GUI
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Thông Tin:";
             // 
-            // cmb_banpc
+            // cmbBanPC
             // 
-            this.cmb_banpc.FormattingEnabled = true;
-            this.cmb_banpc.Location = new System.Drawing.Point(810, 44);
-            this.cmb_banpc.Name = "cmb_banpc";
-            this.cmb_banpc.Size = new System.Drawing.Size(88, 33);
-            this.cmb_banpc.TabIndex = 1;
+            this.cmbBanPC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBanPC.FormattingEnabled = true;
+            this.cmbBanPC.Location = new System.Drawing.Point(810, 44);
+            this.cmbBanPC.Name = "cmbBanPC";
+            this.cmbBanPC.Size = new System.Drawing.Size(88, 28);
+            this.cmbBanPC.TabIndex = 1;
             // 
             // cmb_capc
             // 
+            this.cmb_capc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_capc.FormattingEnabled = true;
+            this.cmb_capc.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
             this.cmb_capc.Location = new System.Drawing.Point(613, 44);
             this.cmb_capc.Name = "cmb_capc";
-            this.cmb_capc.Size = new System.Drawing.Size(69, 33);
+            this.cmb_capc.Size = new System.Drawing.Size(69, 28);
             this.cmb_capc.TabIndex = 1;
+            this.cmb_capc.Text = "1";
             // 
-            // cmb_nvpc
+            // cmbNhanVienpc
             // 
-            this.cmb_nvpc.FormattingEnabled = true;
-            this.cmb_nvpc.Location = new System.Drawing.Point(286, 44);
-            this.cmb_nvpc.Name = "cmb_nvpc";
-            this.cmb_nvpc.Size = new System.Drawing.Size(233, 33);
-            this.cmb_nvpc.TabIndex = 1;
+            this.cmbNhanVienpc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbNhanVienpc.FormattingEnabled = true;
+            this.cmbNhanVienpc.Location = new System.Drawing.Point(286, 44);
+            this.cmbNhanVienpc.Name = "cmbNhanVienpc";
+            this.cmbNhanVienpc.Size = new System.Drawing.Size(233, 28);
+            this.cmbNhanVienpc.TabIndex = 1;
             // 
             // label8
             // 
@@ -441,7 +471,7 @@ namespace CRUD_Student.GUI
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dgv_dspc);
+            this.groupBox3.Controls.Add(this.dgvDSPhanCong);
             this.groupBox3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(21, 172);
             this.groupBox3.Name = "groupBox3";
@@ -450,15 +480,15 @@ namespace CRUD_Student.GUI
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh Sách Phân Công:";
             // 
-            // dgv_dspc
+            // dgvDSPhanCong
             // 
-            this.dgv_dspc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_dspc.Location = new System.Drawing.Point(6, 35);
-            this.dgv_dspc.Name = "dgv_dspc";
-            this.dgv_dspc.RowHeadersWidth = 51;
-            this.dgv_dspc.RowTemplate.Height = 24;
-            this.dgv_dspc.Size = new System.Drawing.Size(892, 346);
-            this.dgv_dspc.TabIndex = 0;
+            this.dgvDSPhanCong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDSPhanCong.Location = new System.Drawing.Point(6, 35);
+            this.dgvDSPhanCong.Name = "dgvDSPhanCong";
+            this.dgvDSPhanCong.RowHeadersWidth = 51;
+            this.dgvDSPhanCong.RowTemplate.Height = 24;
+            this.dgvDSPhanCong.Size = new System.Drawing.Size(892, 346);
+            this.dgvDSPhanCong.TabIndex = 0;
             // 
             // btn_signout
             // 
@@ -471,6 +501,61 @@ namespace CRUD_Student.GUI
             this.btn_signout.TabIndex = 1;
             this.btn_signout.Text = "Sign Out";
             this.btn_signout.UseVisualStyleBackColor = false;
+            this.btn_signout.Click += new System.EventHandler(this.btn_signout_Click);
+            // 
+            // lbl_tenDangnhap
+            // 
+            this.lbl_tenDangnhap.AutoSize = true;
+            this.lbl_tenDangnhap.Location = new System.Drawing.Point(45, 611);
+            this.lbl_tenDangnhap.Name = "lbl_tenDangnhap";
+            this.lbl_tenDangnhap.Size = new System.Drawing.Size(113, 17);
+            this.lbl_tenDangnhap.TabIndex = 2;
+            this.lbl_tenDangnhap.Text = "Tên Đăng Nhập:";
+            // 
+            // TenDN
+            // 
+            this.TenDN.AutoSize = true;
+            this.TenDN.Location = new System.Drawing.Point(164, 611);
+            this.TenDN.Name = "TenDN";
+            this.TenDN.Size = new System.Drawing.Size(53, 17);
+            this.TenDN.TabIndex = 2;
+            this.TenDN.Text = "TenDN";
+            // 
+            // lbl_HoTen
+            // 
+            this.lbl_HoTen.AutoSize = true;
+            this.lbl_HoTen.Location = new System.Drawing.Point(362, 609);
+            this.lbl_HoTen.Name = "lbl_HoTen";
+            this.lbl_HoTen.Size = new System.Drawing.Size(59, 17);
+            this.lbl_HoTen.TabIndex = 2;
+            this.lbl_HoTen.Text = "Họ Tên:";
+            // 
+            // hoTen
+            // 
+            this.hoTen.AutoSize = true;
+            this.hoTen.Location = new System.Drawing.Point(444, 609);
+            this.hoTen.Name = "hoTen";
+            this.hoTen.Size = new System.Drawing.Size(51, 17);
+            this.hoTen.TabIndex = 2;
+            this.hoTen.Text = "HoTen";
+            // 
+            // quyen
+            // 
+            this.quyen.AutoSize = true;
+            this.quyen.Location = new System.Drawing.Point(767, 611);
+            this.quyen.Name = "quyen";
+            this.quyen.Size = new System.Drawing.Size(50, 17);
+            this.quyen.TabIndex = 2;
+            this.quyen.Text = "Quyền";
+            // 
+            // lbl_quyen
+            // 
+            this.lbl_quyen.AutoSize = true;
+            this.lbl_quyen.Location = new System.Drawing.Point(683, 611);
+            this.lbl_quyen.Name = "lbl_quyen";
+            this.lbl_quyen.Size = new System.Drawing.Size(54, 17);
+            this.lbl_quyen.TabIndex = 2;
+            this.lbl_quyen.Text = "Quyền:";
             // 
             // NhanVienManagement
             // 
@@ -478,16 +563,23 @@ namespace CRUD_Student.GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1156, 635);
+            this.Controls.Add(this.lbl_quyen);
+            this.Controls.Add(this.quyen);
+            this.Controls.Add(this.hoTen);
+            this.Controls.Add(this.lbl_HoTen);
+            this.Controls.Add(this.TenDN);
+            this.Controls.Add(this.lbl_tenDangnhap);
             this.Controls.Add(this.btn_signout);
             this.Controls.Add(this.tabControl);
             this.Name = "NhanVienManagement";
             this.Text = "NhanVienManagement";
+            this.Load += new System.EventHandler(this.NhanVienManagement_Load);
             this.tabControl.ResumeLayout(false);
             this.tab_NV.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_dsnv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).EndInit();
             this.grb_info.ResumeLayout(false);
             this.grb_info.PerformLayout();
             this.tab_PC.ResumeLayout(false);
@@ -495,8 +587,9 @@ namespace CRUD_Student.GUI
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_dspc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSPhanCong)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -505,7 +598,7 @@ namespace CRUD_Student.GUI
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tab_NV;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dgv_dsnv;
+        private System.Windows.Forms.DataGridView dgv_NhanVien;
         private System.Windows.Forms.GroupBox grb_info;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -519,25 +612,31 @@ namespace CRUD_Student.GUI
         private System.Windows.Forms.Button btn_XoaNV;
         private System.Windows.Forms.Button btn_SearchNV;
         private System.Windows.Forms.Button btn_DSNV;
-        private System.Windows.Forms.TextBox tbx_searchNV;
+        private System.Windows.Forms.TextBox tbx_Search;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox tbx_hoten;
-        private System.Windows.Forms.TextBox tbx_mk2;
-        private System.Windows.Forms.TextBox tbx_mk;
-        private System.Windows.Forms.TextBox tbx_tendn;
+        private System.Windows.Forms.TextBox tbx_DisplName;
+        private System.Windows.Forms.TextBox tbx_Repass;
+        private System.Windows.Forms.TextBox tbx_Pass;
+        private System.Windows.Forms.TextBox tbx_User;
         private System.Windows.Forms.Button btn_signout;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dgv_dspc;
-        private System.Windows.Forms.ComboBox cmb_banpc;
+        private System.Windows.Forms.DataGridView dgvDSPhanCong;
+        private System.Windows.Forms.ComboBox cmbBanPC;
         private System.Windows.Forms.ComboBox cmb_capc;
-        private System.Windows.Forms.ComboBox cmb_nvpc;
+        private System.Windows.Forms.ComboBox cmbNhanVienpc;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn_xoaPC;
         private System.Windows.Forms.Button btn_themPC;
-        private System.Windows.Forms.ComboBox cmb_quyen;
+        private System.Windows.Forms.ComboBox cmB_Type;
+        private System.Windows.Forms.Label lbl_tenDangnhap;
+        private System.Windows.Forms.Label TenDN;
+        private System.Windows.Forms.Label lbl_HoTen;
+        private System.Windows.Forms.Label hoTen;
+        private System.Windows.Forms.Label quyen;
+        private System.Windows.Forms.Label lbl_quyen;
     }
 }

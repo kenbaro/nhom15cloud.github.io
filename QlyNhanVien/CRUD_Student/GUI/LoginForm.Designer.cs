@@ -96,6 +96,7 @@ namespace CRUD_Student
             this.signin_btn.TabIndex = 5;
             this.signin_btn.Text = "Sign In";
             this.signin_btn.UseVisualStyleBackColor = true;
+            this.signin_btn.Click += new System.EventHandler(this.signin_btn_Click);
             // 
             // cancel_btn
             // 
@@ -105,6 +106,7 @@ namespace CRUD_Student
             this.cancel_btn.TabIndex = 6;
             this.cancel_btn.Text = "Cancel";
             this.cancel_btn.UseVisualStyleBackColor = true;
+            this.cancel_btn.Click += new System.EventHandler(this.cancel_btn_Click);
             // 
             // Form1
             // 
@@ -121,6 +123,8 @@ namespace CRUD_Student
             this.Controls.Add(this.label_Login);
             this.Name = "Form1";
             this.Text = "SignIn";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
